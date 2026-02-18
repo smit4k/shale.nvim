@@ -211,15 +211,15 @@ M.setup = function()
 
     -- functions
     ["@function"]                         = { link = "Function" },
-    ["@function.builtin"]                 = { fg = c.func, italic = true },
-    ["@function.call"]                    = { fg = c.func },
+    ["@function.builtin"]                 = { fg = c.constant, italic = true }, -- builtin fns distinct from user fns
+    ["@function.call"]                    = { link = "Function" },
     ["@function.macro"]                   = { fg = c.keyword },
-    ["@function.method"]                  = { fg = c.func },
-    ["@function.method.call"]             = { fg = c.func },
+    ["@function.method"]                  = { link = "Function" },
+    ["@function.method.call"]             = { link = "Function" },
 
     -- keywords
     ["@keyword"]                          = { link = "Keyword" },
-    ["@keyword.function"]                 = { fg = c.keyword, italic = true },
+    ["@keyword.function"]                 = { fg = c.keyword, italic = true }, -- `def`, `fn`, `function` keyword itself
     ["@keyword.operator"]                 = { fg = c.keyword },
     ["@keyword.import"]                   = { fg = c.keyword },
     ["@keyword.storage"]                  = { fg = c.type },
@@ -243,18 +243,19 @@ M.setup = function()
     ["@type.qualifier"]                   = { fg = c.type },
 
     -- identifiers
+    -- @variable = plain fg (intentional — makes builtins/params/members pop by contrast)
     ["@variable"]                         = { fg = c.fg },
-    ["@variable.builtin"]                 = { fg = c.constant, italic = true },
-    ["@variable.parameter"]               = { fg = c.fg },
-    ["@variable.parameter.builtin"]       = { fg = c.constant, italic = true },
-    ["@variable.member"]                  = { fg = c.fg },
+    ["@variable.builtin"]                 = { fg = c.keyword, italic = true }, -- `self`, `this`, `super`
+    ["@variable.parameter"]               = { fg = c.param },                 -- fn args: dusty gold
+    ["@variable.parameter.builtin"]       = { fg = c.param, italic = true },  -- `...`, builtins
+    ["@variable.member"]                  = { fg = c.member },                -- field access: pale blue
 
     ["@constant"]                         = { link = "Constant" },
     ["@constant.builtin"]                 = { fg = c.constant, italic = true },
     ["@constant.macro"]                   = { fg = c.constant },
 
     ["@attribute"]                        = { fg = c.type },
-    ["@property"]                         = { fg = c.fg },
+    ["@property"]                         = { fg = c.member },  -- obj.property — same as member
     ["@constructor"]                      = { fg = c.type },
     ["@operator"]                         = { link = "Operator" },
     ["@label"]                            = { fg = c.keyword },

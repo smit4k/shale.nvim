@@ -33,6 +33,10 @@ local colors = {
   warning = "#d4a96a", -- Saffron Fog
   hint = "#7fb4c9", -- Nilgiri Blue
 
+  -- Treesitter-specific semantic colors
+  param = "#c9b97f", -- Dusty Gold: fn parameters / fn args — warm, distinct from fg
+  member = "#9ec4d4", -- Pale Nilgiri: field/property access — cooler blue-white than func
+
   -- Extras derived from palette
   info = "#a8c97f", -- Cardamom
   none = "NONE",

@@ -1,47 +1,23 @@
-# A Neovim Plugin Template
+<h1 align='center'>
+    shale.nvim
+</h1>
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ellisonleao/nvim-plugin-template/lint-test.yml?branch=main&style=for-the-badge)
-![Lua](https://img.shields.io/badge/Made%20with%20Lua-blueviolet.svg?style=for-the-badge&logo=lua)
+<p align='center'>
+  <b>A clean, dark, pleasant Neovim theme based on shale rocks</b>
+</p>
 
-A template repository for Neovim plugins.
+<img src="shale-snapshot.png">
 
-## Using it
 
-Via `gh`:
+## Installation
 
-```
-$ gh repo create my-plugin -p ellisonleao/nvim-plugin-template
-```
+Install using your favorite plugin manager
 
-Via github web page:
-
-Click on `Use this template`
-
-![](https://docs.github.com/assets/cb-36544/images/help/repository/use-this-template-button.png)
-
-## Features and structure
-
-- 100% Lua
-- Github actions for:
-  - running tests using [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) and [busted](https://olivinelabs.com/busted/)
-  - check for formatting errors (Stylua)
-  - vimdocs autogeneration from README.md file
-  - luarocks release (LUAROCKS_API_KEY secret configuration required)
-
-### Plugin structure
-
-```
-.
-├── lua
-│   ├── plugin_name
-│   │   └── module.lua
-│   └── plugin_name.lua
-├── Makefile
-├── plugin
-│   └── plugin_name.lua
-├── README.md
-├── tests
-│   ├── minimal_init.lua
-│   └── plugin_name
-│       └── plugin_name_spec.lua
+```lua
+{
+  "smit4k/shale.nvim"
+  lazy = false,
+  priority = 1000,
+  opts = {},
+}
 ```

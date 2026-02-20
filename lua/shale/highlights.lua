@@ -26,8 +26,8 @@ M.setup = function()
     NormalNC          = { fg = c.fg, bg = c.bg },
     NormalFloat       = { fg = c.fg, bg = c.bg_alt },
     NormalSB          = { fg = c.fg_dim, bg = c.bg_alt },
-    FloatBorder       = { fg = c.border, bg = c.none },
-    FloatTitle        = { fg = c.func, bg = c.bg_alt, bold = true },
+    FloatBorder       = { fg = c.border, bg = c.bg },
+    FloatTitle        = { fg = c.fg_dim, bg = c.bg_alt },
     FloatShadow       = { bg = c.bg_alt },
     FloatShadowThrough = { bg = c.bg_alt },
 
@@ -541,14 +541,14 @@ M.setup = function()
     -- =========================================================================
     -- Telescope
     -- =========================================================================
-    TelescopeNormal           = { fg = c.fg, bg = c.bg_alt },
-    TelescopeBorder           = { fg = c.border, bg = c.none },
-    TelescopePromptBorder     = { fg = c.border, bg = c.none },
-    TelescopePromptNormal     = { fg = c.fg, bg = c.surface },
+    TelescopeNormal           = { fg = c.fg },
+    TelescopeBorder           = { fg = c.comment },
+    TelescopePromptBorder     = { fg = c.comment },
+    TelescopePromptNormal     = { fg = c.fg },
     TelescopePromptPrefix     = { fg = c.keyword },
-    TelescopePromptTitle      = { fg = c.keyword, bg = c.bg_alt, bold = true },
-    TelescopePreviewTitle     = { fg = c.func, bg = c.bg_alt, bold = true },
-    TelescopeResultsTitle     = { fg = c.fg_dim, bg = c.bg_alt },
+    TelescopePromptTitle      = { fg = c.fg_dim },
+    TelescopePreviewTitle     = { fg = c.fg_dim },
+    TelescopeResultsTitle     = { fg = c.fg_dim },
     TelescopeMatching         = { fg = c.func, bold = true },
     TelescopeSelection        = { fg = c.fg, bg = c.selection },
     TelescopeSelectionCaret   = { fg = c.keyword, bg = c.selection },
@@ -579,7 +579,7 @@ M.setup = function()
     WhichKeyDesc              = { fg = c.fg },
     WhichKeySeparator         = { fg = c.comment },
     WhichKeyFloat             = { bg = c.bg_alt },
-    WhichKeyBorder            = { fg = c.border },
+    WhichKeyBorder            = { fg = c.comment },
     WhichKeyValue             = { fg = c.fg_dim },
 
     -- =========================================================================
@@ -754,13 +754,14 @@ M.setup = function()
     -- Snacks.nvim
     -- =========================================================================
     SnacksNormal            = { link = "NormalFloat" },
+    SnacksPicker            = { link = "Normal" },
     SnacksBackdrop          = { bg = c.bg, fg = c.fg_dim },
-    SnacksPickerBorder      = { link = "FloatBorder" },
-    SnacksPickerTitle       = { link = "FloatTitle" },
+    SnacksPickerBorder      = { fg = c.comment },
+    SnacksPickerTitle       = { fg = c.fg_dim },
     SnacksPickerMatch       = { fg = c.func, bold = true },
     SnacksPickerSelected    = { fg = c.fg, bg = c.selection },
-    SnacksInputBorder       = { link = "FloatBorder" },
-    SnacksInputTitle        = { link = "FloatTitle" },
+    SnacksInputBorder       = { fg = c.comment },
+    SnacksInputTitle        = { fg = c.fg_dim },
     SnacksDashboardFooter   = { fg = c.comment, italic = true },
     SnacksDashboardHeader   = { fg = c.func, bold = true },
     SnacksDashboardIcon     = { fg = c.func },

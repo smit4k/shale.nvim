@@ -7,7 +7,7 @@ local colors = {
   bg = "#1c1c1e", -- muted dark gray
   bg_alt = "#222224", -- slightly lighter gray
   surface = "#282829", -- surface gray
-  border = "#323234", -- border gray
+  border = "#4a4a4f", -- border gray
 
   -- Foreground / Text
   fg = "#d6e0d8", -- Mist White: morning fog diffused light

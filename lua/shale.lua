@@ -27,13 +27,15 @@ M.load = function()
     return
   end
 
-  -- Reset highlights
-  vim.cmd("highlight clear")
-  if vim.fn.exists("syntax_on") then
-    vim.cmd("syntax reset")
-  end
+  -- Force truecolor and dark background before any highlights are defined.
+  -- This ensures identical rendering on Linux, macOS, and Windows terminals.
+  vim.opt.termguicolors = true
+  vim.opt.background = "dark"
 
-  vim.o.termguicolors = true
+  -- Deterministic reset — clear all prior highlights and syntax state
+  vim.cmd("highlight clear")
+  vim.cmd("syntax reset")
+
   vim.g.colors_name = "shale"
 
   -- Apply all highlight groups

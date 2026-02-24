@@ -480,19 +480,14 @@ M.setup = function()
     ["@lsp.typemod.variable.static"]            = { link = "@constant" },
 
     -- =========================================================================
-    -- Terminal colors (vim.g.terminal_color_N)
-    -- =========================================================================
-    -- set via vim.g below
-
-    -- =========================================================================
     -- Git
     -- =========================================================================
     Added                   = { fg = c.git_add },
     Changed                 = { fg = c.git_change },
     Removed                 = { fg = c.git_delete },
-    DiffAdd                 = { bg = "#1a2b1e" },
-    DiffChange              = { bg = "#26231a" },
-    DiffDelete              = { bg = "#2b1a1a" },
+    DiffAdd                 = { bg = c.diff_add_bg },
+    DiffChange              = { bg = c.diff_change_bg },
+    DiffDelete              = { bg = c.diff_delete_bg },
     DiffText                = { fg = c.fg, bg = c.selection },
     diffAdded               = { fg = c.git_add },
     diffRemoved             = { fg = c.git_delete },
@@ -564,11 +559,11 @@ M.setup = function()
     GitSignsAddNr             = { fg = c.git_add },
     GitSignsChangeNr          = { fg = c.git_change },
     GitSignsDeleteNr          = { fg = c.git_delete },
-    GitSignsAddLn             = { bg = "#1a2b1e" },
-    GitSignsChangeLn          = { bg = "#26231a" },
-    GitSignsDeleteLn          = { bg = "#2b1a1a" },
-    GitSignsAddPreview        = { fg = c.git_add, bg = "#1a2b1e" },
-    GitSignsDeletePreview     = { fg = c.git_delete, bg = "#2b1a1a" },
+    GitSignsAddLn             = { bg = c.diff_add_bg },
+    GitSignsChangeLn          = { bg = c.diff_change_bg },
+    GitSignsDeleteLn          = { bg = c.diff_delete_bg },
+    GitSignsAddPreview        = { fg = c.git_add, bg = c.diff_add_bg },
+    GitSignsDeletePreview     = { fg = c.git_delete, bg = c.diff_delete_bg },
     GitSignsCurrentLineBlame  = { fg = c.comment, italic = true },
 
     -- =========================================================================
@@ -694,9 +689,9 @@ M.setup = function()
     MiniDiffSignAdd             = { fg = c.git_add },
     MiniDiffSignChange          = { fg = c.git_change },
     MiniDiffSignDelete          = { fg = c.git_delete },
-    MiniDiffOverAdd             = { bg = "#1a2b1e" },
-    MiniDiffOverChange          = { bg = "#26231a" },
-    MiniDiffOverDelete          = { bg = "#2b1a1a" },
+    MiniDiffOverAdd             = { bg = c.diff_add_bg },
+    MiniDiffOverChange          = { bg = c.diff_change_bg },
+    MiniDiffOverDelete          = { bg = c.diff_delete_bg },
     MiniDiffOverContext         = { bg = c.surface },
     MiniHipatternsFixme         = { fg = c.bg, bg = c.error, bold = true },
     MiniHipatternsTodo          = { fg = c.bg, bg = c.warning, bold = true },
@@ -841,8 +836,8 @@ M.setup = function()
     NeogitHunkHeader        = { fg = c.fg, bg = c.surface },
     NeogitHunkHeaderHighlight = { fg = c.fg, bg = c.selection, bold = true },
     NeogitDiffContextHighlight = { bg = c.bg_alt },
-    NeogitDiffDeleteHighlight = { fg = c.git_delete, bg = "#2b1a1a" },
-    NeogitDiffAddHighlight  = { fg = c.git_add, bg = "#1a2b1e" },
+    NeogitDiffDeleteHighlight = { fg = c.git_delete, bg = c.diff_delete_bg },
+    NeogitDiffAddHighlight  = { fg = c.git_add, bg = c.diff_add_bg },
     NeogitNotificationInfo  = { fg = c.info },
     NeogitNotificationWarning = { fg = c.warning },
     NeogitNotificationError = { fg = c.error },
@@ -914,17 +909,17 @@ M.setup = function()
     -- =========================================================================
     -- render-markdown.nvim
     -- =========================================================================
-    RenderMarkdownH1          = { fg = c.keyword, bg = "#231b20", bold = true },
-    RenderMarkdownH2          = { fg = c.func, bg = "#1a1e23", bold = true },
-    RenderMarkdownH3          = { fg = c.type, bg = "#1e1e1a", bold = true },
-    RenderMarkdownH4          = { fg = c.string, bg = "#1a2018", bold = true },
-    RenderMarkdownH5          = { fg = c.constant, bg = "#1a2018", bold = true },
+    RenderMarkdownH1          = { fg = c.keyword, bg = c.md_h1_bg, bold = true },
+    RenderMarkdownH2          = { fg = c.func, bg = c.md_h2_bg, bold = true },
+    RenderMarkdownH3          = { fg = c.type, bg = c.md_h3_bg, bold = true },
+    RenderMarkdownH4          = { fg = c.string, bg = c.md_h4_bg, bold = true },
+    RenderMarkdownH5          = { fg = c.constant, bg = c.md_h4_bg, bold = true },
     RenderMarkdownH6          = { fg = c.fg_dim, bg = c.surface, bold = true },
-    RenderMarkdownH1Bg        = { bg = "#231b20" },
-    RenderMarkdownH2Bg        = { bg = "#1a1e23" },
-    RenderMarkdownH3Bg        = { bg = "#1e1e1a" },
-    RenderMarkdownH4Bg        = { bg = "#1a2018" },
-    RenderMarkdownH5Bg        = { bg = "#1a2018" },
+    RenderMarkdownH1Bg        = { bg = c.md_h1_bg },
+    RenderMarkdownH2Bg        = { bg = c.md_h2_bg },
+    RenderMarkdownH3Bg        = { bg = c.md_h3_bg },
+    RenderMarkdownH4Bg        = { bg = c.md_h4_bg },
+    RenderMarkdownH5Bg        = { bg = c.md_h4_bg },
     RenderMarkdownH6Bg        = { bg = c.surface },
     RenderMarkdownCode        = { bg = c.surface },
     RenderMarkdownCodeInline  = { fg = c.constant, bg = c.surface },
@@ -943,25 +938,6 @@ M.setup = function()
 
   set_highlights(groups)
 
-  -- =========================================================================
-  -- Terminal colors
-  -- =========================================================================
-  vim.g.terminal_color_0  = c.bg_alt         -- black
-  vim.g.terminal_color_8  = c.border         -- bright black (dark gray)
-  vim.g.terminal_color_1  = c.error          -- red
-  vim.g.terminal_color_9  = c.git_delete     -- bright red
-  vim.g.terminal_color_2  = c.git_add        -- green
-  vim.g.terminal_color_10 = c.string         -- bright green
-  vim.g.terminal_color_3  = c.warning        -- yellow
-  vim.g.terminal_color_11 = c.type           -- bright yellow
-  vim.g.terminal_color_4  = c.func           -- blue
-  vim.g.terminal_color_12 = c.hint           -- bright blue
-  vim.g.terminal_color_5  = c.keyword        -- magenta
-  vim.g.terminal_color_13 = c.constant       -- bright magenta
-  vim.g.terminal_color_6  = c.operator       -- cyan
-  vim.g.terminal_color_14 = c.fg_dim         -- bright cyan
-  vim.g.terminal_color_7  = c.fg             -- white
-  vim.g.terminal_color_15 = "#ffffff"        -- bright white
 end
 
 return M

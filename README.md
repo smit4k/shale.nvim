@@ -16,8 +16,5 @@ Install using your favorite plugin manager
 ```lua
 {
   "smit4k/shale.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {},
 }
 ```

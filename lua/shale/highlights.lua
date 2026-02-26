@@ -726,10 +726,10 @@ M.setup = function()
     -- =========================================================================
     -- Noice
     -- =========================================================================
-    NoiceCmdline            = { fg = c.fg, bg = c.surface },
+    NoiceCmdline            = { fg = c.fg, bg = c.bg },
     NoiceCmdlineIcon        = { fg = c.func },
     NoiceCmdlineIconSearch  = { fg = c.type },
-    NoiceCmdlinePopup       = { fg = c.fg, bg = c.bg_alt },
+    NoiceCmdlinePopup       = { fg = c.fg, bg = c.bg },
     NoiceCmdlinePopupBorder = { link = "FloatBorder" },
     NoiceCmdlinePopupTitle  = { link = "FloatTitle" },
     NoiceConfirmBorder      = { link = "FloatBorder" },

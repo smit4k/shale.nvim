@@ -376,6 +376,7 @@ M.setup = function()
     LspCodeLensSeparator        = { fg = c.border },
     LspInlayHint                = { fg = c.comment, bg = c.surface, italic = true },
     LspInfoBorder               = { link = "FloatBorder" },
+    LspFloatWin                 = { link = "NormalFloat" },
 
     -- Diagnostics
     DiagnosticError             = { fg = c.error },
@@ -879,6 +880,26 @@ M.setup = function()
     -- =========================================================================
     FidgetTitle   = { fg = c.func, bold = true },
     FidgetTask    = { fg = c.fg_dim },
+
+    -- =========================================================================
+    -- notify.nvim
+    -- =========================================================================
+    NotifyERRORBorder       = { fg = c.error },
+    NotifyWARNBorder        = { fg = c.warning },
+    NotifyINFOBorder        = { fg = c.info },
+    NotifyDEBUGBorder       = { fg = c.hint },
+    NotifyTRACEBorder       = { fg = c.fg_dim },
+    NotifyERRORIcon         = { fg = c.error },
+    NotifyWARNIcon          = { fg = c.warning },
+    NotifyINFOIcon          = { fg = c.info },
+    NotifyDEBUGIcon         = { fg = c.hint },
+    NotifyTRACEIcon         = { fg = c.fg_dim },
+    NotifyERRORTitle        = { fg = c.error, bold = true },
+    NotifyWARNTitle         = { fg = c.warning, bold = true },
+    NotifyINFOTitle         = { fg = c.info, bold = true },
+    NotifyDEBUGTitle        = { fg = c.hint, bold = true },
+    NotifyTRACETitle        = { fg = c.fg_dim, bold = true },
+
 
     -- =========================================================================
     -- Markdown

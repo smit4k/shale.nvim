@@ -18,3 +18,17 @@ Install using your favorite plugin manager
   "smit4k/shale.nvim",
 }
 ```
+
+Ex. setting shale as default colorscheme using lazy.nvim:
+```lua
+return {
+  {
+    "smit4k/shale.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme("shale")
+    end,
+  },
+}
+```

@@ -374,7 +374,7 @@ M.setup = function()
     LspSignatureActiveParameter = { fg = c.type, bold = true },
     LspCodeLens                 = { fg = c.comment, italic = true },
     LspCodeLensSeparator        = { fg = c.border },
-    LspInlayHint                = { fg = c.comment, bg = c.surface, italic = true },
+    LspInlayHint                = { fg = c.comment, italic = true },
     LspInfoBorder               = { link = "FloatBorder" },
     LspFloatWin                 = { link = "NormalFloat" },
 
@@ -958,7 +958,6 @@ M.setup = function()
   }
 
   set_highlights(groups)
-
 end
 
 return M

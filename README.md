@@ -32,3 +32,5 @@ return {
   },
 }
 ```
+## Color Palette
+![shale_palette](palette.png)

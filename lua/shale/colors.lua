@@ -1,5 +1,5 @@
 -- Shale color palette
--- Dark stone backgrounds with hill station accent colors
+-- Dark stone backgrounds with muted mineral and woodland accent colors
 --
 -- Every color is an explicit #RRGGBB hex value.  All highlight groups
 -- reference this table so the scheme is deterministic and independent
@@ -14,35 +14,35 @@ local colors = {
   border   = "#4a4a4f", -- border gray
 
   -- Foreground / Text
-  fg       = "#d6e0d8", -- Mist White: morning fog diffused light
-  fg_dim   = "#8a9e91", -- Lichen Grey: lichen on old stone
-  comment  = "#5c7265", -- Drizzle: light rain on leaves
+  fg       = "#d6e0d8", -- pale mist
+  fg_dim   = "#8a9e91", -- lichen gray
+  comment  = "#5c7265", -- rain-washed green gray
 
   -- Syntax Accent Colors
-  keyword  = "#c97fa0", -- Rhododendron: pink Himalayan blooms
-  string   = "#a8c97f", -- Cardamom: fresh cardamom leaf
-  func     = "#7fb4c9", -- Nilgiri Blue: blue mountains haze
-  type     = "#d4a96a", -- Saffron Fog: warm lamp in hill mist
-  constant = "#9ed490", -- Fern Tip: bright new fern growth
-  number   = "#e8956d", -- Sunset Ridge: ochre hillside at dusk
-  operator = "#b0c9be", -- Cloud Break: silver lining
+  keyword  = "#c97fa0", -- muted rose
+  string   = "#a8c97f", -- soft moss
+  func     = "#7fb4c9", -- mineral blue
+  type     = "#d4a96a", -- weathered ochre
+  constant = "#9ed490", -- fern green
+  number   = "#e8956d", -- warm clay
+  operator = "#b0c9be", -- pale silver green
 
   -- UI Accents
   selection   = "#2e3a4a", -- muted blue-gray selection
   cursorline  = "#26262a", -- subtle gray cursorline
-  git_add     = "#6aab78", -- New Shoot
-  git_change  = "#c9a84c", -- Monsoon Gold
-  git_delete  = "#b05e5e", -- Red Laterite: Kerala red soil
-  error       = "#cc6666", -- Ember
-  warning     = "#d4a96a", -- Saffron Fog
-  hint        = "#7fb4c9", -- Nilgiri Blue
+  git_add     = "#6aab78", -- fresh green
+  git_change  = "#c9a84c", -- muted gold
+  git_delete  = "#b05e5e", -- weathered red
+  error       = "#cc6666", -- ember red
+  warning     = "#d4a96a", -- weathered ochre
+  hint        = "#7fb4c9", -- mineral blue
 
   -- Treesitter-specific semantic colors
-  param  = "#c9b97f", -- Dusty Gold: fn parameters / fn args — warm, distinct from fg
-  member = "#9ec4d4", -- Pale Nilgiri: field/property access — cooler blue-white than func
+  param  = "#c9b97f", -- dusty gold for fn parameters / fn args
+  member = "#9ec4d4", -- pale blue for field/property access
 
   -- Extras
-  info        = "#a8c97f", -- Cardamom (same as string)
+  info        = "#a8c97f", -- soft moss (same as string)
 
   -- Diff / Git background tints (muted overlays)
   diff_add_bg    = "#1a2b1e", -- subtle green tint
